@@ -1,0 +1,195 @@
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <label class="panel-title pull-left"><translate>Leilão Premium</translate></label>
+        </div>
+        <div class="panel-body">
+            <form name="acompanhamentoLoteForm" novalidate autocomplete="off">
+                <fieldset>
+                    <legend>
+                        <label class="control-label"><translate>Leilão Premium</translate></label>
+                    </legend>
+                </fieldset>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label class="control-label"><translate>Cliente</translate><span>:</span></label>
+                        <select class="form-control dropdown-toggle texto bordaLaranja"
+                                data-ng-model="fieldsInfo[3].value" id="filterExercicioInicial" name="filterExercicioInicial"
+                                data-ng-options="reg for reg in formBean.exercicios track by reg">
+                            <option value="">{{'Selecione' | translate}}</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="control-label"><translate>Título</translate><span>:</span></label><br>
+                        <select class="form-control dropdown-toggle texto bordaLaranja"
+                                data-ng-model="fieldsInfo[4].value" id="filterImpressao" name="filterImpressao"
+                                data-ng-options="reg.codigo as reg.nome for reg in formBean.responsaveisImpressao">
+                            <option value="">{{'Selecione' | translate}}</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="control-label"><translate>Mercado</translate><span>:</span></label>
+                        <select class="form-control dropdown-toggle texto bordaLaranja"
+                                data-ng-model="fieldsInfo[3].value" id="filterExercicioInicial" name="filterExercicioInicial"
+                                data-ng-options="reg for reg in formBean.exercicios track by reg">
+                            <option value="">{{'Selecione' | translate}}</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="control-label"><translate>Target</translate><span>:</span></label><br>
+                        <select class="form-control dropdown-toggle texto bordaLaranja"
+                                data-ng-model="fieldsInfo[4].value" id="filterImpressao" name="filterImpressao"
+                                data-ng-options="reg.codigo as reg.nome for reg in formBean.responsaveisImpressao">
+                            <option value="">{{'Selecione' | translate}}</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-right">
+                            <button type="button" class="btn btn-warning botao" title="{{'LABEL.LIMPAR' | translate}}" data-ng-click="limpar();">
+                                <span class="glyphicon glyphicon-refresh">&nbsp;</span> <translate>LABEL.LIMPAR</translate>
+                            </button>
+                            <button class="btn btn-warning botao" title="{{'LABEL.PESQUISAR' | translate}}" name="btnPesquisar" data-ng-click="filterResult();">
+                                <span class="glyphicon glyphicon-search">&nbsp;</span><translate>LABEL.PESQUISAR</translate>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <div class="table-responsive" data-ng-show="paginationCriteria.totalResults > 0">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>
+                            <a data-ng-click="onSort(0, 'l.numeroLote')" style="cursor: pointer;"><translate>LABEL.LOTE</translate>
+									<span data-ng-class="{'glyphicon glyphicon-chevron-up':fieldOrder[0].sortDirection === 'asc',
+														'glyphicon glyphicon-chevron-down':fieldOrder[0].sortDirection === 'desc',
+														'glyphicon glyphicon-sort':fieldOrder[0].sortDirection===null}">
+									</span>
+                            </a>
+                        </th>
+                        <th>
+                            <a data-ng-click="onSort(1, 'l.dataProcessamento')" style="cursor: pointer;"><translate>LABEL.DATA_DE_PROCESSAMENTO</translate>
+									<span data-ng-class="{'glyphicon glyphicon-chevron-up':fieldOrder[1].sortDirection === 'asc',
+														'glyphicon glyphicon-chevron-down':fieldOrder[1].sortDirection === 'desc',
+														'glyphicon glyphicon-sort':fieldOrder[1].sortDirection===null}">
+									</span>
+                            </a>
+                        </th>
+                        <th>
+                            <a data-ng-click="onSort(2, 'l.quantidadeRegistros')" style="cursor: pointer;"><translate>LABEL.QUANTIDADE_DE_REGISTROS</translate>
+									<span data-ng-class="{'glyphicon glyphicon-chevron-up':fieldOrder[2].sortDirection === 'asc',
+														'glyphicon glyphicon-chevron-down':fieldOrder[2].sortDirection === 'desc',
+														'glyphicon glyphicon-sort':fieldOrder[2].sortDirection===null}">
+									</span>
+                            </a>
+                        </th>
+                        <th><translate>LABEL.EXERCICIO</translate></th>
+                        <th><translate>LABEL.VALOR_ESTIMADO</translate><span>&nbsp;(R$)</span></th>
+                        <th><translate>LABEL.IMPRESSAO</translate></th>
+                        <th><translate>LABEL.NOTIFICADO</translate><span>&nbsp;(%)</span></th>
+                        <th><translate>LABEL.PAGO</translate><span>&nbsp;(%)</span></th>
+                        <th><translate>LABEL.APTO</translate><span>&nbsp;(%)</span></th>
+                        <th><translate>LABEL.DIVIDA_ATIVA</translate><span>&nbsp;(%)</span></th>
+                        <th><translate>LABEL.RECURSO</translate><span>&nbsp;(%)</span></th>
+                        <th><translate>LABEL.CARTORIO</translate><span>&nbsp;(%)</span></th>
+
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr data-ng-repeat="lote in formBean.lotes">
+                        <td align="right">{{lote.numeroLote}}</td>
+                        <td align="left">{{lote.dataProcessamento | date:'dd/MM/yyyy'}}</td>
+                        <td align="right" class="quantidade" >{{lote.quantidadeRegistros}}</td>
+                        <td align="left">{{lote.numeroExercicioInicial}}</td>
+                        <td align="right">{{lote.estimativa | currency : ""}}</td>
+                        <td align="left">{{responsaveisImpressaoConverterNome(lote.tipoImpressao)}}</td>
+                        <td>
+                            <div style="display: flex;justify-content: center;">
+                                <percent-display side="50" colors="#E0CABA #EE7621"
+                                                 percent="lote.percentualNotificado">
+                                </percent-display>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="display: flex;justify-content: center;">
+                                <percent-display side="50" colors="#E0CABA #EE7621"
+                                                 percent="lote.percentualPago" >
+                                </percent-display>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="display: flex;justify-content: center;">
+                                <percent-display side="50" colors="#E0CABA #EE7621"
+                                                 percent="lote.percentualApto" >
+                                </percent-display>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="display: flex;justify-content: center;">
+                                <percent-display side="50" colors="#E0CABA #EE7621"
+                                                 percent="lote.percentualDividaAtiva" >
+                                </percent-display>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="display: flex;justify-content: center;">
+                                <percent-display side="50" colors="#E0CABA #EE7621"
+                                                 percent="lote.percentualRecurso" >
+                                </percent-display>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="display: flex;justify-content: center;">
+                                <percent-display side="50" colors="#E0CABA #EE7621"
+                                                 percent="lote.percentualCartorio" >
+                                </percent-display>
+                            </div>
+
+                        </td>
+                    </tr>
+                    </tbody>
+
+                    <tfoot data-ng-show="paginationCriteria.totalResults > 0">
+                    <tr>
+                        <td colspan="13">
+                            <div class="row">
+                                <div class="col-sm-6 table-showing">
+                                    <translate>LABEL.MOSTRANDO</translate>
+                                    {{paginationCriteria.start + 1}} -
+                                    {{isLastPage() ? paginationCriteria.totalResults : paginationCriteria.start + paginationCriteria.limit}}
+                                    <translate>LABEL.DE</translate>
+                                    {{paginationCriteria.totalResults}}.
+                                    <translate>LABEL.TOTAL_PAGINAS</translate>:
+                                    {{paginationCriteria.numPages}}
+                                </div><!-- .col -->
+
+                                <div class="col-sm-6 text-right">
+                                    <uib-pagination boundary-links="true" max-size="10"
+                                                    class="pagination-sm"
+                                                    total-items="paginationCriteria.totalResults"
+                                                    ng-model="paginationCriteria.currentPage"
+                                                    ng-change="listarTodos(true)"
+                                                    items-per-page="paginationCriteria.limit"
+                                                    previous-text="&lsaquo;"
+                                                    next-text="&rsaquo;"
+                                                    first-text="&laquo;"
+                                                    last-text="&raquo;">
+                                    </uib-pagination>
+                                </div><!-- .col -->
+                            </div>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

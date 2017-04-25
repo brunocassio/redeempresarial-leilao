@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Zombie Survival Social Network</title>
+
+    <!--inicio do css -->
+    <link rel="stylesheet" href="app/css/css.css"/>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="node_modules/angular-toastr/dist/angular-toastr.css"/>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="node_modules/angular-ui-grid/ui-grid.css"/>
+    <!-- fim do css -->
+
+    <!-- inicio do js -->
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.js"></script>
+    <script src="node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-ui-grid/ui-grid.js"></script>
+    <script src="node_modules/underscore/underscore.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+    <script src="node_modules/restangular/dist/restangular.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="node_modules/oclazyload/dist/ocLazyLoad.js"></script>
+    <script src="node_modules/angular-simple-logger/dist/angular-simple-logger.js"></script>
+    <script src="node_modules/angular-google-maps/dist/angular-google-maps.js"></script>
+
+
+
+    <script src="app/config/app.js"></script>
+    <script src="app/config/appConfig.js"></script>
+    <script src="app/config/zombie-rotas.config.js"></script>
+
+    <script src="app/controller/index.controller.js"></script>
+    <script src="app/views/survivors/list-all-survivors.controller.js"></script>
+    <script src="app/views/survivors/ShowSurvivorController.js"></script>
+    <script src="app/views/survivors/AddSurvivorController.js"></script>
+    <script src="app/views/survivors/FlagSurvivorController.js"></script>
+    <script src="app/views/reports/ReportsController.js"></script>
+
+    <script src="app/views/produto/ListProdutosController.js"></script>
+
+
+    <script src="app/repository/AbstractRepository.js"></script>
+    <script src="app/repository/PeopleRepository.js"></script>
+    <script src="app/repository/PropertiesRepository.js"></script>
+    <script src="app/repository/ReportRepository.js"></script>
+
+    <script src="app/service/alert.service.js"></script>
+    <script src="app/service/PeopleService.js"></script>
+    <script src="app/service/PropertiesService.js"></script>
+    <script src="app/service/ReportService.js"></script>
+
+    <script src="app/directivas/select/select.directive.js"></script>
+
+    <script src="app/filter/percent-filter.js"></script>
+    <!-- fim do js -->
+</head>
+<body class="container-fluid">
+<div ng-controller="IndexController">
+    <ui-view></ui-view>
+</div>
+</body>
+</html>

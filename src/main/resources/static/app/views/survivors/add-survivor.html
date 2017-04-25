@@ -1,0 +1,137 @@
+<div ng-controller="AddSurvivorController">
+
+    <form class="form-group" name="survivorForm" novalidate>
+        <div class="panel panel-success">
+
+            <div class="panel panel-heading">
+                Add New Survivor
+            </div>
+
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label">Name</label>
+                            <input type="text"
+                                   class="form-control"
+                                   ng-model="survivor.name"
+                                   name="name"/>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label">Age</label>
+                            <input type="text"
+                                   class="form-control"
+                                   ng-model="survivor.age"
+                                   name="age"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label">Latitude</label>
+                            <input type="text"
+                                   class="form-control"
+                                   ng-model="marker.coords.latitude"
+                                   name="lat"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label">Longitude</label>
+                            <input type="text"
+                                   class="form-control"
+                                   ng-model="marker.coords.longitude"
+                                   name="lon"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <select-input
+                            label="Gender"
+                            colspan="3"
+                            provider="gender"
+                            ng-model="survivor.gender"
+                    >
+                    </select-input>
+
+                    <select-input
+                            label="Items"
+                            colspan="3"
+                            provider="selectItems"
+                            ng-model="value"
+                    >
+                    </select-input>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label">Quantity</label>
+                            <input type="number"
+                                   class="form-control"
+                                   ng-model="quantity"
+                                   name="quantity"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label"></label>
+                            <button class="form-control btn btn-success"
+                                    ng-click="add(value, quantity)">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div ui-grid="gridOptions"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+                            <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+                            </ui-gmap-marker>
+                        </ui-gmap-google-map>
+                        <div ng-cloak>
+                            <ul>
+                                <li>coords update ctr: {{coordsUpdates}}</li>
+                                <li>dynamic move ctr: {{dynamicMoveCtr}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-footer">
+                <button class="btn btn-success navbar-btn"
+                        ng-click="save()">
+                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                    Save
+                </button>
+                <button class="btn btn-warning navbar-btn"
+                        ng-click="back()">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    Back
+                </button>
+                <button class="btn btn-primary navbar-btn"
+                        ng-click="clear()">
+                    <i class="fa fa-eraser" aria-hidden="true"></i>
+                    Clear
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
