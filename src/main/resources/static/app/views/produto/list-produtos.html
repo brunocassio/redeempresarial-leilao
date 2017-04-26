@@ -4,7 +4,7 @@
             <label class="panel-title pull-left"><translate>Leilão Premium</translate></label>
         </div>
         <div class="panel-body">
-            <form name="acompanhamentoLoteForm" novalidate autocomplete="off">
+            <form name="produtosForm" novalidate autocomplete="off">
                 <fieldset>
                     <legend>
                         <label class="control-label"><translate>Leilão Premium</translate></label>
@@ -62,7 +62,7 @@
                     <div class="col-md-12">
                         <div class="text-right">
                             <button type="button" class="btn btn-warning botao" title="Executar" data-ng-click="executar();">
-                                <span class="glyphicon glyphicon-refresh">&nbsp;</span> Executar
+                                <span class="glyphicon glyphicon-play">&nbsp;</span> Executar
                             </button>
                         </div>
                     </div>
@@ -82,11 +82,11 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td class="text-left">2.971.605</td>
-                            <td class="text-left">66,91%</td>
-                            <td class="text-left">1.988.301</td>
-                            <td class="text-left">01/2017</td>
-                            <td class="text-left">0,00</td>
+                            <td class="text-center">2.971.605</td>
+                            <td class="text-center">66,91%</td>
+                            <td class="text-center">1.988.301</td>
+                            <td class="text-center">01/2017</td>
+                            <td class="text-center">0,00</td>
                         </tr>
                         </tbody>
                     </table>
@@ -95,7 +95,7 @@
             <br>
 
             <div class="table-responsive" data-ng-show="listaProdutos.length > 0">
-                <table class="table table-bordered table-striped table-hover">
+                <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th class="col-md-1">Faixa horária</th>
