@@ -30,4 +30,46 @@ public class ProdutoServiceImpl implements ProdutoService {
         produtos.add(new Produto("05:00 a 06:00", "HORA UM", 662.40, 20.48, 112, 43980, 33006, 6.14, 0.0, 198.72));
         return produtos;
     }
-}
+
+    @Override
+    public List<Produto> bid(Produto produto) {
+
+        List<Produto> list = listarProdutos();
+        List<Produto> novaLista = new ArrayList<>();
+
+        Double valorLance = produto.getLanceCPM();
+        if (produto.getValorCliente() > 0.0) {
+            valorLance = produto.getValorCliente();
+        }
+        Double valorCliente = valorLance * 1.1;
+        produto.setValorCliente(valorCliente);
+
+        Double valorFinal = produto.getValorLiquido() * 0.3;
+        if (produto.getValorFinal() > 0.0) {
+            valorFinal = produto.getValorFinal();
+        }
+        valorFinal = valorFinal * 1.1;
+        produto.setValorFinal(valorFinal);
+
+        for(Produto p : list){
+            if(p.getProgramaDisponivel().equals(produto.getProgramaDisponivel())){
+                novaLista.add(produto);
+            }else{
+                novaLista.add(p);
+            }
+        }
+
+        return novaLista;
+//        calcSaldo();
+    }
+
+//    public void calcSaldo() {
+//        Double valorGasto = 0.0;
+//        for (Produto pro : produtos) {
+//            if (pro.getValorCliente() > 0) {
+//                valorGasto += pro.getValorFinal();
+//            }
+//        }
+//        saldo = verba - valorGasto;
+    }
+

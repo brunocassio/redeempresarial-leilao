@@ -10,4 +10,6 @@ import java.util.List;
 public interface ProdutoService {
 
     List<Produto> listarProdutos();
+
+    List<Produto> bid(Produto produto);
 }

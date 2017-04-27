@@ -15,11 +15,11 @@
                         <label class="control-label"><translate>Cliente</translate><span>:</span></label>
                         <select class="form-control dropdown-toggle texto bordaLaranja"
                                 data-ng-model="fieldsInfo[3].value" id="filterExercicioInicial" name="filterExercicioInicial"
-                                data-ng-options="reg for reg in formBean.exercicios track by reg">
+                                >
                             <option value="">Selecione</option>
-                            <option value="">RICARDO ELETRO</option>
-                            <option value="">SAGA</option>
-                            <option value="">PARK SHOPPING</option>
+                            <option value="1">RICARDO ELETRO</option>
+                            <option value="2">SAGA</option>
+                            <option value="3">PARK SHOPPING</option>
                         </select>
                     </div>
 
@@ -27,11 +27,11 @@
                         <label class="control-label"><translate>Título</translate><span>:</span></label><br>
                         <select class="form-control dropdown-toggle texto bordaLaranja"
                                 data-ng-model="fieldsInfo[4].value" id="filterImpressao" name="filterImpressao"
-                                data-ng-options="reg.codigo as reg.nome for reg in formBean.responsaveisImpressao">
+                                >
                             <option value="">Selecione</option>
-                            <option value="">Saldão 1</option>
-                            <option value="">Saldão 2</option>
-                            <option value="">Saldão 3</option>
+                            <option value="1">Saldão 1</option>
+                            <option value="2">Saldão 2</option>
+                            <option value="3">Saldão 3</option>
                         </select>
                     </div>
                     <div class="col-md-4">
@@ -46,18 +46,23 @@
                         <label class="control-label"><translate>Mercado</translate><span>:</span></label><br>
                         <select class="form-control dropdown-toggle texto bordaLaranja"
                                 data-ng-model="fieldsInfo[4].value" id="filterImpressao" name="filterImpressao"
-                                data-ng-options="reg.codigo as reg.nome for reg in formBean.responsaveisImpressao">
+                                >
                             <option value="">Selecione</option>
-                            <option value="">Brasília</option>
-                            <option value="">São Paulo</option>
+                            <option value="1">Brasília</option>
+                            <option value="2">São Paulo</option>
                         </select>
                     </div>
                     <div class="col-md-4">
                         <label class="control-label"><translate>Target</translate><span>:</span></label><br>
                         <select class="form-control dropdown-toggle texto bordaLaranja"
                                 data-ng-model="fieldsInfo[4].value" id="filterImpressao" name="filterImpressao"
-                                data-ng-options="reg.codigo as reg.nome for reg in formBean.responsaveisImpressao">
+                                >
                             <option value="">Selecione</option>
+                            <option value="1">AS/AB/25+</option>
+                            <option value="2">AS/ABC/25+</option>
+                            <option value="3">AS/ABCDE/25+</option>
+                            <option value="4">AS/C/25+</option>
+                            <option value="5">AS/CDE/25+</option>
                         </select>
                     </div>
                     <div class="col-md-4">
@@ -131,7 +136,11 @@
                             <td class="text-left">{{item.totalTelespecTGT}}</td>
                             <td class="text-left">{{item.lanceCPM}}</td>
                             <td class="text-left">{{item.valorFinal}}</td>
-                            <td class="text-left"></td>
+                            <td class="text-left">
+                                <button type="button" class="btn btn-default botao" title="BID" data-ng-click="bid(item);">
+                                     +10%
+                                </button>
+                            </td>
                             <td class="text-left">{{item.valorCliente}}</td>
                             <td class="text-left">{{item.valorConcorrente}}</td>
                         </tr>

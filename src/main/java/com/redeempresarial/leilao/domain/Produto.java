@@ -1,5 +1,8 @@
 package com.redeempresarial.leilao.domain;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.redeempresarial.leilao.view.View;
+
 import java.io.Serializable;
 import java.util.UUID;
 
@@ -8,18 +11,33 @@ import java.util.UUID;
  */
 public class Produto implements Serializable {
 
+    @JsonView(View.Summary.class)
     private String id;
+    @JsonView(View.Summary.class)
     private String faixaHorario;
+    @JsonView(View.Summary.class)
     private String programaDisponivel;
+    @JsonView(View.Summary.class)
     private Double valorLiquido;
+    @JsonView(View.Summary.class)
     private Double CPMTGT;
+    @JsonView(View.Summary.class)
     private Integer afinidade;
+    @JsonView(View.Summary.class)
     private Integer totalTelespec;
+    @JsonView(View.Summary.class)
     private Integer totalTelespecTGT;
+    @JsonView(View.Summary.class)
     private Double lanceCPM;
+    @JsonView(View.Summary.class)
     private Double valorFinal = 0.0;
+    @JsonView(View.Summary.class)
     private Double valorCliente = 0.0;
+    @JsonView(View.Summary.class)
     private Double valorConcorrente;
+
+    public Produto() {
+    }
 
     public Produto(String faixaHorario, String programaDisponivel, Double valorLiquido, Double CPMTGT, Integer afinidade, Integer totalTelespec, Integer totalTelespecTGT, Double lanceCPM, Double valorConcorrente, Double valorFinal) {
 

@@ -10,8 +10,8 @@ zombieApp.factory('ProdutoRepository', ['Restangular', 'AbstractRepository',
                 return restangular.one(this.route + '/executar').get();
             };
 
-            this.fetchesAllSurvivors = function () {
-                return restangular.one(this.route + '/people').get();
+            this.bid = function (produto) {
+                return restangular.all(this.route + '/bid').post(produto);
             };
 
             this.fecthSingleSurvivor = function (idSurvivor) {
