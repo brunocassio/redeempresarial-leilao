@@ -24,5 +24,8 @@
     "oclazyload": "^1.0.9",
     "restangular": "^1.5.2",
     "underscore": "^1.8.3"
+  },
+  "engines": {
+    "node": "4.1.1"
   }
 }
