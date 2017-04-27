@@ -11,65 +11,76 @@
                     </legend>
                 </fieldset>
                 <div class="row">
-                    <div class="col-md-4">
-                        <label class="control-label"><translate>Cliente</translate><span>:</span></label>
-                        <select class="form-control dropdown-toggle texto bordaLaranja"
-                                data-ng-model="fieldsInfo[3].value" id="filterExercicioInicial" name="filterExercicioInicial"
+                    <div class="col-md-4" style="width: 85%">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="control-label"><translate>Cliente</translate><span>:</span></label>
+                                <select class="form-control dropdown-toggle texto bordaLaranja"
+                                        data-ng-model="fieldsInfo[3].value" id="filterExercicioInicial" name="filterExercicioInicial"
                                 >
-                            <option value="">Selecione</option>
-                            <option value="1">RICARDO ELETRO</option>
-                            <option value="2">SAGA</option>
-                            <option value="3">PARK SHOPPING</option>
-                        </select>
-                    </div>
+                                    <option value="">Selecione</option>
+                                    <option value="1">RICARDO ELETRO</option>
+                                    <option value="2">SAGA</option>
+                                    <option value="3">PARK SHOPPING</option>
+                                </select>
+                            </div>
 
-                    <div class="col-md-4">
-                        <label class="control-label"><translate>Título</translate><span>:</span></label><br>
-                        <select class="form-control dropdown-toggle texto bordaLaranja"
-                                data-ng-model="fieldsInfo[4].value" id="filterImpressao" name="filterImpressao"
+                            <div class="col-md-4">
+                                <label class="control-label"><translate>Título</translate><span>:</span></label><br>
+                                <select class="form-control dropdown-toggle texto bordaLaranja"
+                                        data-ng-model="fieldsInfo[4].value" id="filterImpressao" name="filterImpressao"
                                 >
-                            <option value="">Selecione</option>
-                            <option value="1">Saldão 1</option>
-                            <option value="2">Saldão 2</option>
-                            <option value="3">Saldão 3</option>
-                        </select>
+                                    <option value="">Selecione</option>
+                                    <option value="1">Saldão 1</option>
+                                    <option value="2">Saldão 2</option>
+                                    <option value="3">Saldão 3</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Verba (R$):</label>
+                                <input class="form-control" type="text" name="field" ng-model="money" ui-money-mask >
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="control-label"><translate>Mercado</translate><span>:</span></label><br>
+                                <select class="form-control dropdown-toggle texto bordaLaranja"
+                                        data-ng-model="fieldsInfo[4].value" id="filterImpressao" name="filterImpressao"
+                                >
+                                    <option value="">Selecione</option>
+                                    <option value="1">Brasília</option>
+                                    <option value="2">São Paulo</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="control-label"><translate>Target</translate><span>:</span></label><br>
+                                <select class="form-control dropdown-toggle texto bordaLaranja"
+                                        data-ng-model="fieldsInfo[4].value" id="filterImpressao" name="filterImpressao"
+                                >
+                                    <option value="">Selecione</option>
+                                    <option value="1">AS/AB/25+</option>
+                                    <option value="2">AS/ABC/25+</option>
+                                    <option value="3">AS/ABCDE/25+</option>
+                                    <option value="4">AS/C/25+</option>
+                                    <option value="5">AS/CDE/25+</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="control-label">Possui Carta Acordo:</label><br>
+                                <label><input type="checkbox" value=""></label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <label>Verba (R$):</label>
-                        <input class="form-control">
+                    <div class="col-md-4" style="width: 15%;" align="left">
+                        <div class="col-md-12">
+                            <div class="text-right">
+                                <img src="app/logo_globo.png" width="150" height="150">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <br>
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="control-label"><translate>Mercado</translate><span>:</span></label><br>
-                        <select class="form-control dropdown-toggle texto bordaLaranja"
-                                data-ng-model="fieldsInfo[4].value" id="filterImpressao" name="filterImpressao"
-                                >
-                            <option value="">Selecione</option>
-                            <option value="1">Brasília</option>
-                            <option value="2">São Paulo</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="control-label"><translate>Target</translate><span>:</span></label><br>
-                        <select class="form-control dropdown-toggle texto bordaLaranja"
-                                data-ng-model="fieldsInfo[4].value" id="filterImpressao" name="filterImpressao"
-                                >
-                            <option value="">Selecione</option>
-                            <option value="1">AS/AB/25+</option>
-                            <option value="2">AS/ABC/25+</option>
-                            <option value="3">AS/ABCDE/25+</option>
-                            <option value="4">AS/C/25+</option>
-                            <option value="5">AS/CDE/25+</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="control-label">Possui Carta Acordo:</label><br>
-                        <label><input type="checkbox" value=""></label>
-                    </div>
-                </div>
                 <br>
                 <div class="row">
                     <div class="col-md-12">
@@ -99,7 +110,7 @@
                             <td class="text-center">66,91%</td>
                             <td class="text-center">1.988.301</td>
                             <td class="text-center">01/2017</td>
-                            <td class="text-center">0,00</td>
+                            <td class="text-center">R$ {{saldo}}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -129,20 +140,20 @@
                         <tr data-ng-repeat="item in listaProdutos">
                             <td class="text-left">{{item.faixaHorario}}</td>
                             <td class="text-left">{{item.programaDisponivel}}</td>
-                            <td class="text-left">{{item.valorLiquido}}</td>
-                            <td class="text-right">{{item.cpmtgt}}</td>
+                            <td class="text-left">R{{item.valorLiquido | currency}}</td>
+                            <td class="text-right">R{{item.cpmtgt | currency}}</td>
                             <td class="text-left">{{item.afinidade}}</td>
                             <td class="text-left">{{item.totalTelespec}}</td>
                             <td class="text-left">{{item.totalTelespecTGT}}</td>
-                            <td class="text-left">{{item.lanceCPM}}</td>
-                            <td class="text-left">{{item.valorFinal}}</td>
+                            <td class="text-left">R{{item.lanceCPM | currency}}</td>
+                            <td class="text-left">R{{item.valorFinal | currency}}</td>
                             <td class="text-left">
-                                <button type="button" class="btn btn-default botao" title="BID" data-ng-click="bid(item);">
+                                <button type="button" class="btn btn-default botao" title="BID" data-ng-click="bid(item);" style="color: white;">
                                      +10%
                                 </button>
                             </td>
-                            <td class="text-left">{{item.valorCliente}}</td>
-                            <td class="text-left">{{item.valorConcorrente}}</td>
+                            <td class="text-left">R{{item.valorCliente | currency}}</td>
+                            <td class="text-left">R{{item.valorConcorrente | currency}}</td>
                         </tr>
                     </tbody>
                 </table>

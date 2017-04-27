@@ -60,16 +60,6 @@ public class ProdutoServiceImpl implements ProdutoService {
         }
 
         return novaLista;
-//        calcSaldo();
     }
-
-//    public void calcSaldo() {
-//        Double valorGasto = 0.0;
-//        for (Produto pro : produtos) {
-//            if (pro.getValorCliente() > 0) {
-//                valorGasto += pro.getValorFinal();
-//            }
-//        }
-//        saldo = verba - valorGasto;
-    }
+}
 

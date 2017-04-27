@@ -5,7 +5,9 @@ zombieApp.config(['RestangularProvider',
 
         //###################### INICIO DA CONFIGURAÇÃO DO RESTANGULAR PARA URL BASE E SUFIX ######################
         // RestangularProvider.setBaseUrl('http://zssn-backend-example.herokuapp.com');
+
         RestangularProvider.setBaseUrl('http://localhost:8080');
+        // RestangularProvider.setBaseUrl('http://107.170.86.238:8080');
         RestangularProvider.setRequestSuffix('.json');
         //###################### FINAL DA CONFIGURAÇÃO DO RESTANGULAR PARA URL BASE E SUFIX #######################
 

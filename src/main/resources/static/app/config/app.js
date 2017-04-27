@@ -8,7 +8,8 @@ var zombieAppDependencies = [
         'ui.router',
         'oc.lazyLoad',
         'restangular',
-        'uiGmapgoogle-maps'
+        'uiGmapgoogle-maps',
+        'ui.utils.masks'
     ];
 
 var zombieApp = angular.module('app', zombieAppDependencies);
