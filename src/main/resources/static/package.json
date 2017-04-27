@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "4.5.0"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -24,8 +27,6 @@
     "oclazyload": "^1.0.9",
     "restangular": "^1.5.2",
     "underscore": "^1.8.3"
-  },
-  "engines": {
-    "node": "4.5.0"
   }
+
 }
