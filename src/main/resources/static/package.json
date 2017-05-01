@@ -6,6 +6,9 @@
   "engines": {
     "node": "4.5.0"
   },
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "angular": "^1.6.0",
     "angular-animate": "^1.6.0",
